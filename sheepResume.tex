@@ -1,0 +1,125 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge \textsc{Xiaoyue Zhang}\\}
+	 \centering
+	    {\href{mailto:blacksheepmails@gmail.com}{blacksheepmails@gmail.com} . 307-220-1883 }
+	\par}
+
+%--------------------SECTIONS-----------------------------------
+
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \textsc{Feb 2016} & Google \\&\emph{Software Developer} \\&\footnotesize{Satellite imagery analytics. Used Go, Python, Appengine, Polymer, and Spanner.}\\\multicolumn{2}{c}{}\\
+ \textsc{July 2015} & Astral Dynamics \\&\emph{Software Developer} \\&\footnotesize{Made a web app that collects data for a psychology study and worked on a complex data analysis tool. Used technologies including R, Elm, Redis, React, Angular, Grunt, Flask, and Sass.}\\\multicolumn{2}{c}{}\\
+  \textsc{April 2015} & American Conservation Experience \\\textsc{Sept 2014}&\emph{Americorps Member}\\&\footnotesize{Worked on projects that require back country camping and wilderness survival. Work included invasive species control, trail building and maintenance, rock work, and re-vegetation. Became chainsaw certified and accumulated 200+ hours of chainsaw experience.}\\\multicolumn{2}{c}{} \\
+  \textsc{Jan 2015} & MIT D-Lab \\&\emph{Lab Assistant}\\&\footnotesize{Created lab kits for a class that teaches teams of students from various backgrounds how to design and deploy kits for making medical equipment. Worked with many sensors, Arduino products, and Ardunio extensions}\\\multicolumn{2}{c}{} \\
+ \textsc{Fall-Spring 2013} & Massachusetts Institute of Technology \\&\emph{Teaching Assistant}\\&\footnotesize{Assisted the professor in teaching and managing Mathematics for Computer Science (6.042j). Oversaw graders and lab assistants, was in charge of keeping track of student performance and assigning grades for the entire class, and composed online courseware for the edX platform.}\\\multicolumn{2}{c}{} \\
+\textsc{Summer 2013} & Vecna Technologies \\&\emph{Software Intern}\\&\footnotesize{Created a web applet for visualizing and searching patient medical records in an intuitive and convenient manner. This involved both client side and server side work.}\\\multicolumn{2}{c}{} \\
+\textsc{Summer 2012} & MIT Lincoln Laboratory \\&\emph{Undergraduate Researcher}\\&\footnotesize{Designed and created circuitry for an autonomous underwater vehicle that will act as a charging station for larger submarines. Worked heavily on sensors and power electronics.}\\\multicolumn{2}{c}{} \\
+% \textsc{Fall 2011} & HKN Electrical Engineering and Computer Science \\&\emph{Tutor}\\&\footnotesize{Tutored students one on one in Mathematics for Computer Science and Introduction to Algorithms.}\\\multicolumn{2}{c}{} \\
+\textsc{Summer 2011} & Women's Technology Program\\&\emph{Residential Tutor}\\&\footnotesize{Tutored talented high school girls in Electrical Engineering and Computer Science, designed assignments and labs, lived in residence halls to guide students' study habits and help create a safe and friendly atmosphere.}\\\multicolumn{2}{c}{} \\
+\textsc{Summer 2010} & MIT Lab of Manufacturing and Productivity\\&\emph{Student Researcher}\\&\footnotesize{Researched artificial intelligence with a focus on natural language processing and natural language processor design. Developed MySQL databases and automated data collection tools for large language dictionaries. Built front-end using PHP/MySQL and JavaScript allowing for accurate and fast searching.}
+\end{tabular}
+
+%Section: Awards
+\section{Awards}
+\begin{tabular}{rp{11cm}}
+\textsc{Winter 2012} & Mobile Autonomous Systems Laboratory (MASLab)\\&\emph{2nd Place}\\&\footnotesize{MASLab is a month long competition where teams build robots that must navigate a course and play a game with an opposing team completely autonomously, using computer vision and data from sensors.}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{June 2014} & Bachelor of Science, \textbf{Massachusetts Institute of Technology}\\
+& Primary Major: Electrical Engineering and Computer Science | \small Advisor: Prof. Albert Meyer\\
+& Secondary Major: Mathematics\\
+& Concentration: Music\\
+\end{tabular}
+
+%Section: Skills
+\section{Skills}
+ \begin{tabular}{rp{11cm}}
+ \textsc{Languages}:& (fluent) English, (intermediate) Spanish, Mandarin Chinese\\
+ \textsc{Computer (Proficient)}:& Python, Go, Java, Javascript\\
+ \textsc{Computer (Experience in)}:& PHP, Scheme, MySQL, Haskell, C++, Arduino, Matlab, C, Linux, Elm, HTML, CSS, Sass, Polymer, React, Angular, jQuery, Appengine, Google Cloud Platform, \LaTeX, Processing, Assembly, Photoshop, GIMP, MaxMSP\\
+ \textsc{Machining}:& Machine shop, power tools, laser cutter, water jet, precision machining, CNC, CAD\\
+\textsc{Outdoors}:& Wilderness First Aid, CPR, Chainsaw, Haul Systems (climbing/rescue), Winter Survival, Bicycle repairs\\
+\end{tabular}
+%Section: Interests
+\section{Interests and Activities}
+Technology, STEM Education\\
+Bicycle Touring, Mountaineering, Climbing, Travelling\\
+Drawing, Murals, Violin\\
+
+
+\end{document}
